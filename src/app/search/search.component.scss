@@ -1,0 +1,17 @@
+.search{
+    &__result{
+        display: block;
+    }
+    &__list{
+            border: 1px solid #d6d6d6;
+            border-radius: 4px;
+            padding: 8px 0;
+        &-link{
+            color: black;
+            padding: 5px 10px;
+        }
+    }
+}
+.closeList{
+    display: none;
+}

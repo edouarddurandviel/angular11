@@ -1,0 +1,63 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+
+                    <div class="card card-plein">
+
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title mt-0">Profile du candidat <a class="btn-new" routerLink="/applicants">Retour à la page d'acceuil</a></h4>
+                        <p class="card-category">Vous pouvez modifier le contenu de la page</p>
+                    </div>
+
+                    <form (ngSubmit)="update();" [formGroup]="profileForm">
+
+                        <input type="hidden" name="id" formControlName="theId">
+
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="form-group">
+                                  <label for="firstName">Prénom: </label>
+                                    <input type="text" class="form-control"
+                                    formControlName="firstName" required/>
+                                    <div *ngIf="firstName.invalid && firstName.dirty" class="alert alert-danger">
+                                        Prénom obligatoire !
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-8">
+                                <div class="form-group">
+                                  <label for="lastName">Nom: </label>
+                                    <input type="text" class="form-control"
+                                    formControlName="lastName" required/>
+                                    <div *ngIf="lastName.invalid && lastName.dirty" class="alert alert-danger">
+                                        Nom obligatoire !
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <label for="appTitle">Votre métier</label>
+                                <input type="text" class="form-control"
+                                formControlName="appTitle" required/>
+                                <div *ngIf="appTitle.invalid && appTitle.dirty" class="alert alert-danger">
+                                    Métier obligatoire !
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12"><button [disabled]="profileForm.invalid" class="btn btn-success">Modifier</button></div>
+                        </div>
+
+                    </form>
+                    <div *ngIf="submitted">OK</div>
+                    </div>
+            </div>
+       </div>
+    </div>
+</div>
+                    

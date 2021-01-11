@@ -1,0 +1,45 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card card-plein">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title mt-0">Trouver une destination</h4>
+                      <p class="card-category">Liste des villes de france (source data.gouv)</p>
+                  </div>
+
+                  <form id="search-component" class="row">
+                    <div class="col-12">
+                      <div class="form-group">
+                        <label for="search-box">Adresse</label>
+                        <input type="text" #searchBox class="form-control" id="search-box" 
+                        (input)="search(searchBox.value)" 
+                        autocomplete="off" 
+                        (blur)="toogleList($event)" 
+                        (focus)="toogleList($event)">
+                        <small id="emailHelp" class="form-text text-muted">Lancer la recherche</small>
+                      </div>
+                    </div>
+                  </form>
+            
+                  <div class="row search">
+                    <div class="col-lg-12">
+
+                      <div class="search__result" *ngIf="(loc$ | async) as list">
+                        <div class="mt-4 search__list" *ngFor="let prop of list.features">
+                          <a href="{{prop.properties.id}}" class="search__list-link">
+                            {{ prop.properties.name}} <strong>{{ prop.properties.postcode}} - {{ prop.properties.city }}</strong>
+                          </a>
+                        </div>
+                      </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+                  
+
+

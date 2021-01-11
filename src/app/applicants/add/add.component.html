@@ -1,0 +1,62 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+
+                    <div class="card card-plein">
+
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title mt-0">Ajouter <a class="btn-new" routerLink="/applicants">Retour à la page d'acceuil</a></h4>
+                        <p class="card-category">Vous pouvez modifier le contenu</p>
+                    </div>
+
+                    <form (ngSubmit)="add();" [formGroup]="profileForm">
+
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="form-group">
+                                  <label for="firstName">First name: </label>
+                                    <input type="text" class="form-control"
+                                    formControlName="firstName" required/>
+                                    <div *ngIf="firstName.invalid && firstName.dirty" class="alert alert-danger">
+                                        Prénom obliatoire !
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-8">
+                                <div class="form-group">
+                                  <label for="lastName">Last name: </label>
+                                    <input type="text" class="form-control"
+                                    formControlName="lastName" required/>
+                                    <div *ngIf="lastName.invalid && lastName.dirty" class="alert alert-danger">
+                                        Nom obligatoire !
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <label for="appTitle">What is your job</label>
+                                <input type="text" class="form-control"
+                                formControlName="appTitle" required/>
+                                <div *ngIf="appTitle.invalid && appTitle.dirty" class="alert alert-danger">
+                                    Votre fonction obliatoire !
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12"><button [disabled]="profileForm.invalid" class="btn btn-success">Ajouter</button></div>
+                        </div>
+
+                    </form>
+                    <div *ngIf="submitted">ok</div>
+                    </div>
+            </div>
+       </div>
+    </div>
+</div>
+                    
+
