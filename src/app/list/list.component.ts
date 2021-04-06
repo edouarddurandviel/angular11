@@ -1,16 +1,16 @@
-import {HttpClient} from '@angular/common/http';
 import {Component, ViewChild, AfterViewInit} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
-import {merge, of as observableOf} from 'rxjs';
-import {catchError, map, startWith, switchMap} from 'rxjs/operators';
+// import {merge, of as observableOf} from 'rxjs';
+// import {catchError, map, startWith, switchMap} from 'rxjs/operators';
 import {GithubIssue} from './list';
 import {ListService} from './list.service';
 
 @Component({
-  selector: 'app-list',
-  templateUrl: './list.component.html',
-  styleUrls: ['./list.component.scss']
+    selector: 'app-list',
+    templateUrl: './list.component.html',
+    styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements AfterViewInit {
 
@@ -57,6 +57,7 @@ export class ListComponent implements AfterViewInit {
     //     return observableOf([]);
     //   })
     // ).subscribe(data => this.data = data);
+
   }
 
   next() {

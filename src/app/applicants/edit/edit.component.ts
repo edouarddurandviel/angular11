@@ -42,15 +42,16 @@ export class EditComponent implements OnInit{
     currentId: number;
     appliId = '';
     submitted = false;
-   // reactive form
-   profileForm = this.fb.group({
-                  theId: [''],
-                  firstName: ['', Validators.required],
-                  lastName: ['', Validators.required],
-                  appTitle: ['', Validators.required],
-                });
+    
+    // reactive form
+    profileForm = this.fb.group({
+                    theId: [''],
+                    firstName: ['', Validators.required],
+                    lastName: ['', Validators.required],
+                    appTitle: ['', Validators.required],
+                  });
 
-  ngOnInit(): void {
+    ngOnInit(): void {
 
     // init defaut value
     this.service.getApplicant(Number(this.route.snapshot.paramMap.get('id')))

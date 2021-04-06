@@ -62,7 +62,6 @@ export class SearchComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
     // foreach keystroke, call the "searchService" using the subject stream
     this.loc$ = this.searchTerms.pipe(
       // wait 100ms after each keystroke before considering the term
