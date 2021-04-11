@@ -1,0 +1,29 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card card-plein">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title mt-0">CanActivate [AuthGuard]</h4>
+                        <p class="card-category">Veuillez vous connecter pour accéder à la page contact</p>
+                    </div>
+
+                    <div class="card-body">
+
+                    <div *ngIf='isLogged'>
+                        <h4>Login page you are LOGGED ok</h4>
+                        <a class="btn-new" (click)='logout()'>logout</a>
+                    </div>
+                    <div *ngIf='!isLogged'>
+                        <h4>Login page but you are not logged</h4>
+                        <a class="btn-new" (click)='login()'>login for authorization</a>
+                    </div>
+
+                </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

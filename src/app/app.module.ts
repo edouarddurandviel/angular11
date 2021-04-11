@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 
 // first line components
 import { HomeComponent } from './home/home.component';
+import { ContactComponent } from './contact/contact.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { CompanyComponent } from './company/company.component';
 import { MessageComponent } from './search/message/message.component';
@@ -19,12 +20,14 @@ import { HeaderComponent } from './includes/header/header.component';
 import { SidebarComponent } from './includes/sidebar/sidebar.component';
 import { FooterComponent } from './includes/footer/footer.component';
 import { NavComponent } from './includes/nav/nav.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    ContactComponent,
     NotFoundComponent,
     CompanyComponent,
     MessageComponent,
@@ -32,6 +35,7 @@ import { NavComponent } from './includes/nav/nav.component';
     FooterComponent,
     SidebarComponent,
     NavComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

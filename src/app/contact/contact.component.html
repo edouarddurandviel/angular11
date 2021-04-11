@@ -4,11 +4,10 @@
             <div class="col-md-12">
                 <div class="card card-plein">
                     <div class="card-header card-header-danger">
-                        <h4 class="card-title mt-0">Home page</h4>
-                        <p class="card-category">Homepage description</p>
+                        <h4 class="card-title mt-0">Contact page</h4>
+                        <p class="card-category" *ngIf='isLogged'>Contact page you are [Status: LOGGED]</p>
+                        <p class="card-category"><a class="btn-new" (click)='logout()'>Logout</a></p>
                     </div>
-
-                   
   </div>
             </div>
         </div>

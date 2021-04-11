@@ -1,25 +1,14 @@
-import { Injectable } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
-import { memoize } from './memoize';
+// providers they make services available on your application
+// depedency provider => injector => runtim version of a depedency value DI token
+import { NgModule } from '@angular/core';
 
-let hitCount = 0;
 
-@Injectable({
-  providedIn: 'root'
+// injector.ts
+heroService: HeroService;
+
+@NgModule({
+  providers: [Logger, {provide: logger, useClass: EventBetterLogger}], // instance of class Logger "Injector"
 })
-export class MemoizedService {
 
-  public fetchResource: (id: string) => any;
+// injector makes a map of all dep.
 
-  constructor(private http: HttpClient) {
-      this.fetchResource = memoize(this.privateFetchResource);
-  }
-
-  // can return anything but it must be passed into the memoize function
-  private privateFetchResource = (id: string) => {
-      hitCount++;
-      // In this particular case we choose to retrieve content using param id.
-      return this.http.get<any>(`http://url/${id}`);
-  }
-
-}

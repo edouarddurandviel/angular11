@@ -1,0 +1,26 @@
+
+$red-1: #ef5350;
+$red-2: #e53935;
+$red-3: #f33527;
+$red-4: #e11b0c;
+$gradient-1: rgba(244, 67, 54, 0.14); 
+$gradient-2: rgba(0, 0, 0, 0.12);
+$gradient-3: rgba(244, 67, 54, 0.12);
+
+.btn{
+    &-new{
+        border-radius: 3px;
+        cursor: pointer;
+        padding: 15px;
+        background: linear-gradient(60deg, $red-1, $red-2);
+        color: white;
+        float: right;
+        margin-top: 20px; 
+
+        &:hover{
+            box-shadow: 0 14px 26px -12px $gradient-1, 0 4px 23px 0 $gradient-2, 0 8px 10px -5px $gradient-3;
+            background-color: $red-3;
+            border-color: $red-4;
+        }
+    }
+}

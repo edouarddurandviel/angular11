@@ -5,7 +5,7 @@ import {  Router} from '@angular/router';
 
 const tPath = `./`;
 
-@Component({
+@Component ({
   selector: 'app-applicants',
   templateUrl: `${tPath}/applicants.component.html`,
   styleUrls: [`${tPath}/applicants.component.scss`]
